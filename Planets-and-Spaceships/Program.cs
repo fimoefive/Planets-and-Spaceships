@@ -43,11 +43,11 @@ namespace Planets_and_Spaceships
             //7.Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the `Remove()` method to eliminate it from the end of `planetList`.
             planetList.Remove(planetList.Last());
 
-            Console.WriteLine($"\n Pluto is now a dwarf planet and has been removed: {string.Join(", ", planetList)}.");
+            Console.WriteLine($"\nPluto is now a dwarf planet and has been removed: {string.Join(", ", planetList)}.");
 
             planetList.Add("Pluto");
 
-            Console.WriteLine($"\n{string.Join(", ", planetList)}.");
+            Console.WriteLine($"\nPluto is now added back to the list of planets: {string.Join(", ", planetList)}.");
             // Iterating over planets
 
             // Ref: [List of Solar System probes](https://en.wikipedia.org/wiki/List_of_Solar_System_probes)
