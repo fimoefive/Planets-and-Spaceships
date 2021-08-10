@@ -20,7 +20,7 @@ namespace Planets_and_Spaceships
 
             //2.Create another `List` that contains that last two planet of our solar system.
             List<string> planetList2 = new List<string>() { "Uranus", "Neptune" };
-            Console.WriteLine($"Furthest planets in our Solar System: {string.Join(", ", planetList2)}.");
+            Console.WriteLine($"\nFurthest planets in our Solar System: {string.Join(", ", planetList2)}.");
 
             //3.Combine the two lists by using `AddRange()`.
             planetList.AddRange(planetList2);
@@ -30,21 +30,24 @@ namespace Planets_and_Spaceships
             //4.Use `Insert()` to add Earth, and Venus in the correct order.
             planetList.Insert(1, "Earth");
             planetList.Insert(1, "Venus");
-            Console.WriteLine($"The order of planets in the Solar System: {string.Join(", ", planetList)}.");
+            Console.WriteLine($"\nThe order of planets in the Solar System: {string.Join(", ", planetList)}.");
 
             //5.Use `Add()` again to add Pluto to the end of the list.
             planetList.Add("Pluto");
-            Console.WriteLine($"The order of planets in the Solar System from the Sun: {string.Join(", ", planetList)}.");
+            Console.WriteLine($"\nThe order of planets in the Solar System from the Sun: {string.Join(", ", planetList)}.");
 
             //6.Now that all the planets are in the list, slice the list using `GetRange()` in order to extract the rocky planets into a new list called `rockyPlanets`.
             var rockyPlanets = planetList.GetRange(0, 4);
-            Console.WriteLine($"The order of rocky planets in the Solar System distanced from the Sun: {string.Join(", ", rockyPlanets)}.");
-
+            Console.WriteLine($"\nThe order of rocky planets in the Solar System; distanced from the Sun: {string.Join(", ", rockyPlanets)}.");
 
             //7.Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the `Remove()` method to eliminate it from the end of `planetList`.
+            planetList.Remove(planetList.Last());
 
+            Console.WriteLine($"\n Pluto is now a dwarf planet and has been removed: {string.Join(", ", planetList)}.");
 
+            planetList.Add("Pluto");
 
+            Console.WriteLine($"\n{string.Join(", ", planetList)}.");
             // Iterating over planets
 
             // Ref: [List of Solar System probes](https://en.wikipedia.org/wiki/List_of_Solar_System_probes)
