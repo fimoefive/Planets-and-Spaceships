@@ -37,7 +37,8 @@ namespace Planets_and_Spaceships
             Console.WriteLine($"The order of planets in the Solar System from the Sun: {string.Join(", ", planetList)}.");
 
             //6.Now that all the planets are in the list, slice the list using `GetRange()` in order to extract the rocky planets into a new list called `rockyPlanets`.
-
+            var rockyPlanets = planetList.GetRange(0, 4);
+            Console.WriteLine($"The order of rocky planets in the Solar System distanced from the Sun: {string.Join(", ", rockyPlanets)}.");
 
 
             //7.Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the `Remove()` method to eliminate it from the end of `planetList`.
