@@ -13,6 +13,7 @@ namespace Planets_and_Spaceships
             List<string> planetList = new List<string>() { "Mercury", "Mars" };
             Console.WriteLine($"Planets in the Solar System: {string.Join(", ", planetList)}.");
 
+
 //1. `Add()` Jupiter and Saturn at the end of the list.
 
 //2.Create another `List` that contains that last two planet of our solar system.
