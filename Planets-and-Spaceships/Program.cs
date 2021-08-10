@@ -19,7 +19,7 @@ namespace Planets_and_Spaceships
             planetList.Add("Saturn");
 
             //2.Create another `List` that contains that last two planet of our solar system.
-            List<string> planetList2 = new List<string>() { "Neptune", "Pluto" };
+            List<string> planetList2 = new List<string>() { "Uranus", "Neptune" };
             Console.WriteLine($"Furthest planets in our Solar System: {string.Join(", ", planetList2)}.");
 
             //3.Combine the two lists by using `AddRange()`.
@@ -28,11 +28,13 @@ namespace Planets_and_Spaceships
             Console.WriteLine($"\nAddRange() the planets list 2 are: {string.Join(", ", planetList2)}.");
 
             //4.Use `Insert()` to add Earth, and Venus in the correct order.
-
-
+            planetList.Insert(1, "Earth");
+            planetList.Insert(1, "Venus");
+            Console.WriteLine($"The order of planets in the Solar System: {string.Join(", ", planetList)}.");
 
             //5.Use `Add()` again to add Pluto to the end of the list.
-
+            planetList.Add("Pluto");
+            Console.WriteLine($"The order of planets in the Solar System from the Sun: {string.Join(", ", planetList)}.");
 
             //6.Now that all the planets are in the list, slice the list using `GetRange()` in order to extract the rocky planets into a new list called `rockyPlanets`.
 
