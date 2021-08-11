@@ -14,7 +14,7 @@ namespace Planets_and_Spaceships
             Console.WriteLine($"Planets in the Solar System: {string.Join(", ", planetList)}.");
 
 
- //1. `Add()` Jupiter and Saturn at the end of the list.
+            //1. `Add()` Jupiter and Saturn at the end of the list.
             planetList.Add("Jupiter");
             planetList.Add("Saturn");
 
@@ -48,6 +48,8 @@ namespace Planets_and_Spaceships
             planetList.Add("Pluto");
 
             Console.WriteLine($"\nPluto is now added back to the list of planets: {string.Join(", ", planetList)}.");
+
+
             // Iterating over planets
 
             // Ref: [List of Solar System probes](https://en.wikipedia.org/wiki/List_of_Solar_System_probes)
@@ -58,13 +60,39 @@ namespace Planets_and_Spaceships
             //and your custom types(such as `Movie`, `Dog`, and `Food`).
             //These types can be passed to anything, like a dictionary.
 
+            var spacecraft = new Dictionary<string, List<string>>();
+            spacecraft.Add("Mariner 10", new List<string> { "Earth", "Venus", "Mercury" });
+            spacecraft.Add("Messenger", new List<string> { "Mercury" });
+            spacecraft.Add("Venera 1", new List<string> { "Venus" });
+            spacecraft.Add("Mars Express", new List<string> { "Mars" });
+            spacecraft.Add("New Horizons", new List<string> { "Pluto", "Charon" });
+            spacecraft.Add("Voyager 1", new List<string> { "Jupiter", "Saturn" });
+            spacecraft.Add("Voyager 2", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+            spacecraft.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
+            spacecraft.Add("Juno", new List<string> { "Jupiter" });
 
+            Console.Write("\n");
 
             //2.Iterate over your list of planets from above, and inside that loop,
             //iterate over the dictionary.Write to the console, for each planet,
             //which satellites have visited which planet.
 
+            foreach (var planet in planetList)
+            {
+                var orbited = new List<string>();
 
+                foreach (var satellite in spacecraft)
+                {
+                    if (satellite.Value.Contains(planet))
+                    {
+                        orbited.Add(satellite.Key);
+                    }
+                }
+                if (orbited.Count > 0)
+                {
+                    Console.WriteLine($"{planet}: {String.Join(", ", orbited)}");
+                }
+            }
 
 
         }
