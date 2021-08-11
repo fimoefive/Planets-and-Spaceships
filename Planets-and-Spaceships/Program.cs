@@ -95,8 +95,6 @@ namespace Planets_and_Spaceships
             }
 
 
-
-
         }
     }
 }
