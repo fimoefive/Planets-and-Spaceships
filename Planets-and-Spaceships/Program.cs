@@ -48,6 +48,8 @@ namespace Planets_and_Spaceships
             planetList.Add("Pluto");
 
             Console.WriteLine($"\nPluto is now added back to the list of planets: {string.Join(", ", planetList)}.");
+
+
             // Iterating over planets
 
             // Ref: [List of Solar System probes](https://en.wikipedia.org/wiki/List_of_Solar_System_probes)
@@ -57,6 +59,17 @@ namespace Planets_and_Spaceships
             //visited.Remember that `List` is a Type just like native types(such as `string`, `int`, & `bool`)
             //and your custom types(such as `Movie`, `Dog`, and `Food`).
             //These types can be passed to anything, like a dictionary.
+
+            var ssProbes = new Dictionary<string, List<string>>();
+            ssProbes.Add("Mariner 10", new List<string> { "Earth", "Venus", "Mercury"});
+            ssProbes.Add("Messenger", new List<string> { "Mercury" });
+            ssProbes.Add("Venera 1", new List<string> { "Venus" });
+            ssProbes.Add("Mars Express", new List<string> {  "Mars" });
+            ssProbes.Add("New Horizons", new List<string> { "Pluto", "Charon" });
+            ssProbes.Add("Voyager 1", new List<string> { "Jupiter", "Saturn" });
+            ssProbes.Add("Voyager 2", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+            ssProbes.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
+            ssProbes.Add("Juno", new List<string> { "Jupiter" });
 
 
 
