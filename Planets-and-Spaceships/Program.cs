@@ -14,7 +14,7 @@ namespace Planets_and_Spaceships
             Console.WriteLine($"Planets in the Solar System: {string.Join(", ", planetList)}.");
 
 
- //1. `Add()` Jupiter and Saturn at the end of the list.
+            //1. `Add()` Jupiter and Saturn at the end of the list.
             planetList.Add("Jupiter");
             planetList.Add("Saturn");
 
@@ -60,16 +60,16 @@ namespace Planets_and_Spaceships
             //and your custom types(such as `Movie`, `Dog`, and `Food`).
             //These types can be passed to anything, like a dictionary.
 
-            var ssProbes = new Dictionary<string, List<string>>();
-            ssProbes.Add("Mariner 10", new List<string> { "Earth", "Venus", "Mercury"});
-            ssProbes.Add("Messenger", new List<string> { "Mercury" });
-            ssProbes.Add("Venera 1", new List<string> { "Venus" });
-            ssProbes.Add("Mars Express", new List<string> {  "Mars" });
-            ssProbes.Add("New Horizons", new List<string> { "Pluto", "Charon" });
-            ssProbes.Add("Voyager 1", new List<string> { "Jupiter", "Saturn" });
-            ssProbes.Add("Voyager 2", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
-            ssProbes.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
-            ssProbes.Add("Juno", new List<string> { "Jupiter" });
+            var spacecraft = new Dictionary<string, List<string>>();
+            spacecraft.Add("Mariner 10", new List<string> { "Earth", "Venus", "Mercury" });
+            spacecraft.Add("Messenger", new List<string> { "Mercury" });
+            spacecraft.Add("Venera 1", new List<string> { "Venus" });
+            spacecraft.Add("Mars Express", new List<string> { "Mars" });
+            spacecraft.Add("New Horizons", new List<string> { "Pluto", "Charon" });
+            spacecraft.Add("Voyager 1", new List<string> { "Jupiter", "Saturn" });
+            spacecraft.Add("Voyager 2", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+            spacecraft.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
+            spacecraft.Add("Juno", new List<string> { "Jupiter" });
 
             Console.Write("\n");
 
@@ -79,13 +79,19 @@ namespace Planets_and_Spaceships
 
             foreach (var planet in planetList)
             {
-                Console.WriteLine($"{planet}");
-                foreach (var(prob, probePlanets) in ssProbes)
+                var visited = new List<string>();
+
+                //Console.WriteLine($"{planet}");
+                foreach (var satellite in spacecraft)
                 {
-                    if (probePlanets.Contains(planet))
+                    if (satellite.Value.Contains(planet))
                     {
-                        //Console.Write($"{prob}, ");
+                        visited.Add(satellite.Key);
                     }
+                }
+                if (visited.Count > 0)
+                {
+                    Console.WriteLine($"{planet}: {String.Join(",", visited)}");
                 }
             }
 
