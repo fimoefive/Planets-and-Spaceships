@@ -71,11 +71,23 @@ namespace Planets_and_Spaceships
             ssProbes.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
             ssProbes.Add("Juno", new List<string> { "Jupiter" });
 
-
+            
 
             //2.Iterate over your list of planets from above, and inside that loop,
             //iterate over the dictionary.Write to the console, for each planet,
             //which satellites have visited which planet.
+
+            foreach(var planet in planetList)
+            {
+                Console.WriteLine($"{planet}");
+                foreach (var(prob, probePlanets) in ssProbes)
+                {
+                    if (probePlanets.Contains(planet))
+                    {
+                        Console.Write($"{prob}, ");
+                    }
+                }
+            }
 
 
 
