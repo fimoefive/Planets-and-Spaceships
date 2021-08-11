@@ -79,19 +79,18 @@ namespace Planets_and_Spaceships
 
             foreach (var planet in planetList)
             {
-                var visited = new List<string>();
+                var orbited = new List<string>();
 
-                //Console.WriteLine($"{planet}");
                 foreach (var satellite in spacecraft)
                 {
                     if (satellite.Value.Contains(planet))
                     {
-                        visited.Add(satellite.Key);
+                        orbited.Add(satellite.Key);
                     }
                 }
-                if (visited.Count > 0)
+                if (orbited.Count > 0)
                 {
-                    Console.WriteLine($"{planet}: {String.Join(",", visited)}");
+                    Console.WriteLine($"{planet}: {String.Join(", ", orbited)}");
                 }
             }
 
