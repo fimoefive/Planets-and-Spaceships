@@ -71,7 +71,7 @@ namespace Planets_and_Spaceships
             ssProbes.Add("Cassini–Huygens", new List<string> { "Jupiter", "Venus", "Saturn" });
             ssProbes.Add("Juno", new List<string> { "Jupiter" });
 
-            Console.Write("\n ");
+            Console.Write("\n");
 
             //2.Iterate over your list of planets from above, and inside that loop,
             //iterate over the dictionary.Write to the console, for each planet,
@@ -84,7 +84,7 @@ namespace Planets_and_Spaceships
                 {
                     if (probePlanets.Contains(planet))
                     {
-                        Console.Write($"{prob}, ");
+                        //Console.Write($"{prob}, ");
                     }
                 }
             }
